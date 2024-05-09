@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>triangle of Star</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <label for="inputNumber">Number of Star:</label>
+    <input type="number" id="inputNumber">
+    <button onclick="DrawTriangle()">Go</button>
+    <div class="star"></div>
+
+    <script>
+        function DrawTriangle () {
+            var number = (document.getElementById("inputNumber").value)
+            var star = ''
+
+            if (number % 2 === 0) {
+                for (var count = 1; count <= number; count++) {
+                    star += '*'.repeat(count) + "<br>"
+                }
+            } else {
+                for (var count = number; count >= 1; count--) {
+                    star += '*'.repeat(count) + "<br>"
+                }
+            }
+            document.getElementsByClassName("star")[0].innerHTML = star
+        }
+    </script>
+</body>
+</html>

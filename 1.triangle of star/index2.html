@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>triangle of *</title>
+  </head>
+  <body>
+    <label for="numberOfStar">Number of Star:</label>
+    <input type="text" id="numberOfStar" />
+    <button>Go</button>
+    <div class="star" style="margin-top: 20px"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $("button").on("click", function () {
+        var numberOfStar = $("#numberOfStar").val();
+        var star = "";
+        if (numberOfStar % 2 === 0) {
+          for (i = 1; i <= numberOfStar; i++) {
+            star += "*".repeat(i) + "<br>";
+          }
+        } else {
+            for (i = numberOfStar; i >= 0; i--) {
+                star += "*".repeat(i) + "<br>";
+            }
+        }
+
+        $(".star").html(star);
+      });
+    </script>
+  </body>
+</html>
